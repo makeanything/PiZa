@@ -3,11 +3,11 @@ var request = require('axios')
 const BACKEND_URL = '/api/recipes';
 
 let actions = {
-    getRecipes: (id) => {
+    getRecipes: () => {
         return {
             // type: ['GET_RECIPES', 'GET_RECIPES_SUCCESS', 'GET_RECIPES_FAILURE']
             type: 'GET_RECIPES',
-            promise: request.get(BACKEND_URL + '/' + id)
+            promise: request.get(BACKEND_URL + '/')
         }
     },
     makeRecipe: (recipeParams) => {

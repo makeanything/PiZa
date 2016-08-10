@@ -6,15 +6,20 @@ import { bindActionCreators } from 'redux'
 import actions from '../redux/actions'
 import RecipeList from './RecipeList'
 import RecipeInput from './RecipeInput'
+import Splash from './Splash'
+import SignUpButton from './SignUpButton'
+import ReactBootstrap, { Button } from 'react-bootstrap'
 
 class App extends Component {
 
   render() {
     return(
       <div>
-        <h1>This is my recipe App</h1>
-        <RecipeInput actions={this.props.actions}/>
-        <RecipeList actions={this.props.actions} recipes={this.props.recipes}/>
+        <Splash/>
+        <br/>
+        <SignUpButton/>
+        {/* <RecipeInput actions={this.props.actions}/>
+        <RecipeList actions={this.props.actions} recipes={this.props.recipes}/> */}
       </div>
     )
   }

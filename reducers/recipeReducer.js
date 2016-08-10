@@ -8,8 +8,11 @@ function getId(todos) {
 
 let recipeReducer = function(recipes = [], action){
   switch(action.type) {
+    case 'GET_RECIPES':
+      return recipes
     case 'ADD_RECIPE':
-      console.log(this)
+      console.log('reducer', this.state)
+      console.log('action', action)
       return [{
           title: 'oh',
           descript: 'kay',
