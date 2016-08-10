@@ -31,7 +31,7 @@ app.get('/', function(req, res) {
 
 app.use("/api", require("./api"))
 
-var port = 8080
+var port = process.env.PORT || 8080
 
 app.listen(port, function(error) {
   if(error) throw error
