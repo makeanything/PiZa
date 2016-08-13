@@ -12,10 +12,10 @@ require('../models/Recipe')
 
 var compiler = webpack(config)
 
-mongoose.connect('mongodb://localhost/reactrecipes', (err) => {
-  if(err) console.log(err)
-  else console.log('Connected to mongodb://localhost/reactrecipes')
-})
+// mongoose.connect('mongodb://localhost/reactrecipes', (err) => {
+//   if(err) console.log(err)
+//   else console.log('Connected to mongodb://localhost/reactrecipes')
+// })
 
 app.use(wDM(compiler, {noInfo: true, publicPath: config.output.publicPath}))
 app.use(wHM(compiler))
