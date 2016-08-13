@@ -12,6 +12,12 @@ require('../models/Recipe')
 
 var compiler = webpack(config)
 
+let mongoUrl = process.env.MONGO_URL || 'mongodb://localhost/piza';
+mongoose.connect(mongoUrl,(err) => {
+  if (err) console.log(err);
+  else console.log('Connected to ' + mongoUrl);
+});
+
 // mongoose.connect('mongodb://localhost/reactrecipes', (err) => {
 //   if(err) console.log(err)
 //   else console.log('Connected to mongodb://localhost/reactrecipes')
