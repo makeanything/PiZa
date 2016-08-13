@@ -4,6 +4,7 @@
   "description": "communal shopping and cooking done right",
   "main": "./client/client.js",
   "scripts": {
+    "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "nodemon server/server.js --ignore components"
   },
