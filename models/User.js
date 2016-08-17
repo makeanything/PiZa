@@ -1,7 +1,7 @@
 var mongoose = require('mongoose')
 
-let Schema = mongoose.Schema
-let userSchema = Schema({
+var Schema = mongoose.Schema
+var userSchema = Schema({
   id: String,
   user: String,
   recipes: [type: mongoose.Schema.Types.ObjectId, ref: 'Recipe']
