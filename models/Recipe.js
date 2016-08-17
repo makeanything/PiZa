@@ -2,8 +2,8 @@
 
 var mongoose = require('mongoose')
 
-let Schema = mongoose.Schema
-let recipeSchema = Schema({
+var Schema = mongoose.Schema
+var recipeSchema = Schema({
   id: String,
   title: String,
   pic: String,
