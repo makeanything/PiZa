@@ -12,10 +12,16 @@ require('../models/Recipe')
 
 var compiler = webpack(config)
 
-mongoose.connect('mongodb://localhost/reactrecipes', (err) => {
-  if(err) console.log(err)
-  else console.log('Connected to mongodb://localhost/reactrecipes')
-})
+let mongoUrl = process.env.NODE_ENV || 'mongodb://localhost/piza';
+mongoose.connect(mongoUrl,(err) => {
+  if (err) console.log(err);
+  else console.log('Connected to ' + mongoUrl);
+});
+
+// mongoose.connect('mongodb://localhost/reactrecipes', (err) => {
+//   if(err) console.log(err)
+//   else console.log('Connected to mongodb://localhost/reactrecipes')
+// })
 
 app.use(wDM(compiler, {noInfo: true, publicPath: config.output.publicPath}))
 app.use(wHM(compiler))
@@ -31,7 +37,7 @@ app.get('/', function(req, res) {
 
 app.use("/api", require("./api"))
 
-var port = 8080
+var port = process.env.PORT || 8080
 
 app.listen(port, function(error) {
   if(error) throw error

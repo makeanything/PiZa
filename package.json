@@ -3,7 +3,11 @@
   "version": "0.0.1",
   "description": "communal shopping and cooking done right",
   "main": "./client/client.js",
+  "engines": {
+    "npm": "3.8.9"
+  },
   "scripts": {
+    "start": "node server/server.js --ignore components",
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "nodemon server/server.js --ignore components"
   },
