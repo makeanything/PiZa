@@ -12,7 +12,7 @@ require('../models/Recipe')
 
 var compiler = webpack(config)
 
-const mongoUrl = process.env.MONGO_URL || 'mongodb://localhost/piza';
+const mongoUrl = process.env.MONGODB_URI || 'mongodb://localhost/piza';
 
 mongoose.connect(mongoUrl, (err) => {
   if (err) console.log(err);
